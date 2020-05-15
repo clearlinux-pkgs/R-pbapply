@@ -4,14 +4,13 @@
 #
 Name     : R-pbapply
 Version  : 1.4.2
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/pbapply_1.4-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pbapply_1.4-2.tar.gz
 Summary  : Adding Progress Bar to '*apply' Functions
 Group    : Development/Tools
 License  : GPL-2.0
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 progress bar to vectorized R functions
@@ -24,21 +23,22 @@ progress bar to vectorized R functions
 
 %prep
 %setup -q -c -n pbapply
+cd %{_builddir}/pbapply
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571872048
+export SOURCE_DATE_EPOCH=1589514974
 
 %install
-export SOURCE_DATE_EPOCH=1571872048
+export SOURCE_DATE_EPOCH=1589514974
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
