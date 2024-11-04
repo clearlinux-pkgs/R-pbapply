@@ -5,7 +5,7 @@
 #
 Name     : R-pbapply
 Version  : 1.7.2
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/pbapply_1.7-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pbapply_1.7-2.tar.gz
 Summary  : Adding Progress Bar to '*apply' Functions
